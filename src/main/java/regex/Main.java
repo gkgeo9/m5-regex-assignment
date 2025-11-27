@@ -58,12 +58,12 @@ public class Main {
      * @return a list containing the email addresses in the string.
      */
     public static List<String> extractEmails(String str) {
-        final Pattern pattern = Pattern.compile("\\b[A-Za-z0-9._%+-]+@(?:mail\\.)?utoronto\\.ca\\b");
-        final Matcher matcher = pattern.matcher(str);
         final List<String> result = new ArrayList<>();
         if (str == null) {
             return result;
         }
+        final Pattern pattern = Pattern.compile("\\b[A-Za-z0-9._%+-]+@(?:mail\\.)?utoronto\\.ca\\b");
+        final Matcher matcher = pattern.matcher(str);
         while (matcher.find()) {
             result.add(matcher.group());
         }
